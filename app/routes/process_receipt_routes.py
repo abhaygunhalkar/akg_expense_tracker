@@ -24,6 +24,41 @@ openai_client = AzureOpenAI(
     api_key=SUBSCRIPTION_KEY,
 )
 
+@router.get("/funday")
+async def funday():
+    
+    """
+        A fun utility endpoint to verify LLM connectivity.
+
+        This method is used to test that the Azure OpenAI integration is working correctly
+        before invoking actual production intelligence (PI) methods. It sends a simple prompt
+        to the model and returns the response, ensuring that the LLM pipeline is functional.
+
+        Not intended for production use.
+    """
+
+    try:
+        prompt_message = "Write a beautiful quote of the day."
+        response = openai_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt_message}],
+            max_tokens=300,
+        )
+        
+        print("-----------------response--------------", response)
+        
+        json_string = response.choices[0].message.content
+        
+        print("-----------------json_string--------------", json_string)
+        cleaned_json_string = clean_json_string(json_string)
+        
+        print("-----------------cleaned_json_string--------------", cleaned_json_string)
+        
+        return {"message": cleaned_json_string}
+    except Exception as e:
+        print("-----------------error--------------", str(e))
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @router.post("/process-receipt")
 async def process_receipt(file: UploadFile):
