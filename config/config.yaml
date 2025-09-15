@@ -1,0 +1,8 @@
+app:
+  name: akg_expense_tracker
+  host: 127.0.0.1
+  port: 9090
+
+logging:
+  level: INFO
+  file: logs/app.log

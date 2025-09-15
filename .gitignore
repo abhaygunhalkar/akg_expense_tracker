@@ -1,0 +1,65 @@
+# ------------------------
+# Node.js / React Frontend
+# ------------------------
+node_modules/
+build/
+dist/
+.cache/
+*.log
+*.lock
+.env
+.env.local
+.env.development
+.env.production
+
+# Testing
+coverage/
+*.test.js
+*.spec.js
+
+# ------------------------
+# Python Backend
+# ------------------------
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.log
+*.sqlite3
+*.db
+*.bak
+*.tmp
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Pipenv / Poetry
+Pipfile.lock
+poetry.lock
+
+# ------------------------
+# OS / Editor / Misc
+# ------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------
+# Azure / Deployment
+# ------------------------
+*.azure/
+*.publishsettings
+*.deployment
+*.env.secret

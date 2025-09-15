@@ -1,0 +1,8 @@
+pymongo
+dotenv
+fastapi 
+uvicorn[standard]
+python-dotenv 
+openai
+python-multipart
+fastapi[all]
